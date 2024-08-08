@@ -1,0 +1,10 @@
+factors=c("HDAC1", "HDAC2" ,"CHD4", "MTA2", "MBD3" ,"GATAD2A" ,"GATAD2B" ,"MTA1", "MBD2", "RBBP4")for (factor in factors) {  sh_scripts=file("/home/labs/kvbortle_lab/rcheng14/ChIP_NurD/createBedGraph.sh")  writeLines(    c(      '#!/bin/bash',      '# ----------------SLURM Parameters----------------',      '#SBATCH -p cputest',      '#SBATCH -n 1',      '#SBATCH --mem=160g',      '#SBATCH -N 1',          '# ----------------Commands------------------------',      paste0("cut -f1-3,11 ", factor,"_score.csv > ",factor,"temp.bedgraph") ,      paste0(" sort -k1,1 -k2,2n ",factor,"temp.bedgraph > ", factor,"_sorted.bedgraph")       paste0("awk '$4 >= 20' ",factor,"_sorted.bedgraph"," > ",factor,"small_sorted.bedgraph")          ),    sh_scripts  )  system(paste('sbatch ', "/home/labs/kvbortle_lab/rcheng14/ChIP_NurD/createBedGraph.sh",sep=''))  }bedGraphToBigWig HDAC1small_sorted.bedgraph hg38.chrom.sizes HDAC1_score.bigwig
+bedGraphToBigWig HDAC2small_sorted.bedgraph hg38.chrom.sizes HDAC2_score.bigwig
+bedGraphToBigWig CHD4small_sorted.bedgraph hg38.chrom.sizes CHD4_score.bigwig
+bedGraphToBigWig MTA2small_sorted.bedgraph hg38.chrom.sizes MTA2_score.bigwig
+bedGraphToBigWig MBD3small_sorted.bedgraph hg38.chrom.sizes MBD3_score.bigwig
+bedGraphToBigWig GATAD2Asmall_sorted.bedgraph hg38.chrom.sizes GATAD2A_score.bigwig
+bedGraphToBigWig GATAD2Bsmall_sorted.bedgraph hg38.chrom.sizes GATAD2B_score.bigwig
+bedGraphToBigWig MTA1small_sorted.bedgraph hg38.chrom.sizes MTA1_score.bigwig
+bedGraphToBigWig MBD2small_sorted.bedgraph hg38.chrom.sizes MBD2_score.bigwig
+bedGraphToBigWig RBBP4small_sorted.bedgraph hg38.chrom.sizes RBBP4_score.bigwig
