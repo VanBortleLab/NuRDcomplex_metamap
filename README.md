@@ -1,3 +1,5 @@
+## Data formats
+Signal track files corresponding to our processed composite ChIP-seq and uniform bin-scores are available for download as individual .bigwig files via Zenodo https://zenodo.org/records/13274508
 ## Underlying data
 |Accession | Title | Platform | Total_bases | SRA_filename | FastQ_URL | target | Cell line |
 |--- | --- | --- | --- | --- | --- | --- | --- |
