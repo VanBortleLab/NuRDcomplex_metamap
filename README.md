@@ -1,4 +1,5 @@
-![Figure 1](logo.png)
+ # <img src="NuRD_logo.png" width="1200px"> 
+ 
 # Overview
 The Nucleosome Remodeling and Deacetylase (Mi-2/NuRD) Complex is a multi-subunit complex involved in histone deacetylation and ATP-dependent chromatin remodeling. While proteins such as HDACs in the NuRD complex are ChIPed in many cell lines, other proteins such as RBBP4 and the MTAs have significantly smaller representations. As these experiments are conducted by different research groups, there's no compilation for a good representation for the holo-NuRD complex map. Therefore, we mapped the NuRD complex genomic occupancy across cell lines using a uniformed framework of scoring for ChIP-seq data developed by Rajendra K C et.al in https://www.biorxiv.org/content/10.1101/2024.06.08.598009.abstract.
 ## Data formats
